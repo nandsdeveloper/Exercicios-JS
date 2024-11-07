@@ -1,0 +1,36 @@
+<!-- UniCEUB Taguatinga, Ciência da Computação, Interação Humano-Computador: Lista de exercícios JS, aluno:
+Matheus Fernandes, 10/11
+
+Desenvolva um programa usando a estrutura de repetiçao do_while para executar
+uma sequencia de comandos por uma quantidade indeterminada de vezes
+utilizando uma variável de controle. Ao clicar em ok uma frase é gerada. Ao clicar
+em cancelar todas as frases geradas são impressas na tela. -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repetição do...while</title>
+</head>
+<body>
+
+<div id="output"></div>
+
+<script>
+  let frases = []; // Array para armazenar as frases geradas
+  let contador = 1; // Contador para enumerar as frases
+
+  do {
+    // Gera uma frase e armazena no array
+    frases.push("Esta é a frase número " + contador);
+    contador++;
+
+  } while (confirm("Clique em OK para gerar outra frase ou Cancelar para finalizar."));
+
+  // Exibe todas as frases geradas na tela
+  document.getElementById("output").innerHTML = frases.join("<br>");
+</script>
+
+</body>
+</html>

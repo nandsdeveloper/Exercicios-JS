@@ -1,0 +1,37 @@
+<!-- UniCEUB Taguatinga, Ciência da Computação, Interação Humano-Computador: Lista de exercícios JS, aluno:
+Matheus Fernandes, 10/11
+
+Desenvolver um programa em JS que faça a leitura de dois números inteiros e
+apresente o resultado da soma entre eles. Aplicar a interação do usuário com o
+sistema. -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soma de Dois Números</title>
+</head>
+<body>
+
+<script>
+  function somarNumeros() {
+    // Solicita ao usuário o primeiro número
+    const numero1 = parseInt(prompt("Digite o primeiro número inteiro:"), 10);
+
+    // Solicita ao usuário o segundo número
+    const numero2 = parseInt(prompt("Digite o segundo número inteiro:"), 10);
+
+    // Calcula a soma dos números
+    const soma = numero1 + numero2;
+
+    // Exibe o resultado da soma em uma janela de alerta
+    alert("O resultado da soma é: " + soma);
+  }
+
+  // Chama a função ao carregar a página
+  somarNumeros();
+</script>
+
+</body>
+</html>

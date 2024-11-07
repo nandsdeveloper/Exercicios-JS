@@ -1,0 +1,91 @@
+<!-- UniCEUB Taguatinga, Ciência da Computação, Interação Humano-Computador: Lista de exercícios JS, aluno:
+Matheus Fernandes, 10/11
+
+Usando a estrutura do switch..case, desenvolva um programa que quando o
+usuário digitar o número do mês, no campo abaixo apareça o nome do mês. -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador de Mês</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f3f3f3;
+    }
+    .container {
+      text-align: center;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      margin: 5px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #processar {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #cancelar {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Digite um número de mês (1 a 12)</h2>
+  <input type="number" id="mes" min="1" max="12" placeholder="Ex: 2">
+  <div>
+    <button id="processar" onclick="verificarMes()">Processar</button>
+    <button id="cancelar" onclick="cancelar()">Cancelar</button>
+  </div>
+  <p id="resultado"></p>
+</div>
+
+<script>
+  function verificarMes() {
+    const mes = parseInt(document.getElementById("mes").value);
+    let nomeMes;
+
+    switch (mes) {
+      case 1: nomeMes = "Janeiro"; break;
+      case 2: nomeMes = "Fevereiro"; break;
+      case 3: nomeMes = "Março"; break;
+      case 4: nomeMes = "Abril"; break;
+      case 5: nomeMes = "Maio"; break;
+      case 6: nomeMes = "Junho"; break;
+      case 7: nomeMes = "Julho"; break;
+      case 8: nomeMes = "Agosto"; break;
+      case 9: nomeMes = "Setembro"; break;
+      case 10: nomeMes = "Outubro"; break;
+      case 11: nomeMes = "Novembro"; break;
+      case 12: nomeMes = "Dezembro"; break;
+      default: nomeMes = "Número inválido. Digite um valor entre 1 e 12."; break;
+    }
+
+    document.getElementById("resultado").textContent = `O mês correspondente é: ${nomeMes}`;
+  }
+
+  function cancelar() {
+    document.getElementById("mes").value = "";
+    document.getElementById("resultado").textContent = "";
+  }
+</script>
+
+</body>
+</html>

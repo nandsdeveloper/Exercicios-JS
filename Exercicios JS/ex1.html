@@ -1,0 +1,38 @@
+<!-- UniCEUB Taguatinga, Ciência da Computação, Interação Humano-Computador: Lista de exercícios JS, aluno:
+Matheus Fernandes, 10/11
+
+Desenvolver um programa usando Java Script para capturar nome e sobrenome de
+um usuário e concatenar formando um nome completo. Deverá haver caixa de
+diálogo para interação com usuário, assim ele poderá digitar o nome em seguida o
+sobrenome e ter o resultado da concatenação em uma janela também. -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concatenar Nome Completo</title>
+</head>
+<body>
+
+<script>
+  function capturarNomeCompleto() {
+    // Solicita o nome do usuário
+    const nome = prompt("Digite o seu nome:");
+
+    // Solicita o sobrenome do usuário
+    const sobrenome = prompt("Digite o seu sobrenome:");
+
+    // Concatena o nome e sobrenome
+    const nomeCompleto = nome + " " + sobrenome;
+
+    // Exibe o nome completo em uma janela de alerta
+    alert("O seu nome completo é: " + nomeCompleto);
+  }
+
+  // Chama a função ao carregar a página
+  capturarNomeCompleto();
+</script>
+
+</body>
+</html>

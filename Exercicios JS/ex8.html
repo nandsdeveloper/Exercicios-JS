@@ -1,0 +1,60 @@
+<!-- UniCEUB Taguatinga, Ciência da Computação, Interação Humano-Computador: Lista de exercícios JS, aluno:
+Matheus Fernandes, 10/11
+
+Calcular o salário líquido de um funcionário que trabalha por hora (horista).
+- Para desenvolver o cálculo é necessário ter as seguintes informações:
+- Quantidade de horas trabalhadas no mês (js_qht)
+- Valor da hora de trabalho (js_vht)
+- Percentual de desconto do INSS (js_inss)
+- Informar a classificação Salarial
+Quantidade de Horas Trabalhadas/Mês: 135 a 180
+Valor da Hora Trabalhada: 25 a 50
+Percentual de Desconto INSS: 5 a 15
+- Objetos/Métodos utilizados:
+entrada: window.prompt
+saída: document.write -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo de Salário Líquido</title>
+</head>
+<body>
+
+<script>
+  // Entrada de dados
+  const js_qht = parseFloat(window.prompt("Digite a quantidade de horas trabalhadas no mês (135 a 180):"));
+  const js_vht = parseFloat(window.prompt("Digite o valor da hora trabalhada (25 a 50):"));
+  const js_inss = parseFloat(window.prompt("Digite o percentual de desconto do INSS (5 a 15):"));
+
+  // Verificação das entradas para garantir que estão nos intervalos especificados
+  if (js_qht < 135 || js_qht > 180 || js_vht < 25 || js_vht > 50 || js_inss < 5 || js_inss > 15) {
+    document.write("Por favor, insira valores dentro dos intervalos especificados.");
+  } else {
+    // Cálculo do salário bruto
+    const salarioBruto = js_qht * js_vht;
+
+    // Cálculo do desconto do INSS
+    const descontoINSS = (salarioBruto * js_inss) / 100;
+
+    // Cálculo do salário líquido
+    const salarioLiquido = salarioBruto - descontoINSS;
+
+    // Classificação Salarial
+    const classificacaoSalarial = (js_qht >= 135 && js_qht <= 180) && (js_vht >= 25 && js_vht <= 50) && (js_inss >= 5 && js_inss <= 15)
+      ? "Classificação dentro dos parâmetros."
+      : "Fora dos parâmetros.";
+
+    // Saída dos resultados
+    document.write("<h3>Resultado do Cálculo de Salário</h3>");
+    document.write("Salário Bruto: R$ " + salarioBruto.toFixed(2) + "<br>");
+    document.write("Desconto INSS (" + js_inss + "%): R$ " + descontoINSS.toFixed(2) + "<br>");
+    document.write("Salário Líquido: R$ " + salarioLiquido.toFixed(2) + "<br>");
+    document.write("Classificação Salarial: " + classificacaoSalarial + "<br>");
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Média - Switch</title>
+</head>
+<body>
+
+<h2>Cálculo de Média (Switch)</h2>
+<form onsubmit="calcularMedia(event)">
+  <label for="nota1">Nota 1:</label>
+  <input type="number" id="nota1" required><br>
+  <label for="nota2">Nota 2:</label>
+  <input type="number" id="nota2" required><br>
+  <label for="nota3">Nota 3:</label>
+  <input type="number" id="nota3" required><br>
+  <label for="nota4">Nota 4:</label>
+  <input type="number" id="nota4" required><br>
+  <button type="submit">Calcular Média</button>
+</form>
+
+<p id="resultado"></p>
+
+<script>
+  function calcularMedia(event) {
+    event.preventDefault();
+
+    const nota1 = parseFloat(document.getElementById("nota1").value);
+    const nota2 = parseFloat(document.getElementById("nota2").value);
+    const nota3 = parseFloat(document.getElementById("nota3").value);
+    const nota4 = parseFloat(document.getElementById("nota4").value);
+
+    const soma = nota1 + nota2 + nota3 + nota4;
+    const media = soma / 4;
+    let resultado;
+
+    switch (true) {
+      case (media > 70):
+        resultado = "Aprovado";
+        break;
+      case (media >= 50 && media <= 70):
+        resultado = "Recuperação";
+        break;
+      default:
+        resultado = "Reprovado";
+    }
+
+    document.getElementById("resultado").textContent = "Média: " + media + " - " + resultado;
+  }
+</script>
+
+</body>
+</html>
